@@ -1,8 +1,6 @@
 # commandstring/websockets #
 A boilerplate for PHP websockets that connect to javascript
 
-# NOTE: THIS IS STILL A WORK IN PROGRESS #
-
 # Setup
 
 `git clone https://github.com/CommandString/websockets`

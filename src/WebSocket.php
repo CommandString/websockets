@@ -25,7 +25,12 @@ class WebSocket implements MessageComponentInterface {
     public function onMessage(ConnectionInterface $from, $msg)
     {
         if ($json_msg = json_decode($msg)) {
-            $request = Message::new ($this->clients->getClient($from), $json_msg);
+            $request = Message::new($this->clients->getClient($from), $json_msg);
+
+            if (!isset($json_msg->endpoint) || empty($json_msg->endpoint)) {
+                $request->addError("You must supply an endpoint with the request!")->respond();
+                return;
+            }
 
             $this->requests::handle($request);
         }

@@ -21,6 +21,7 @@
 
         #response {
             height: 20vh;
+            margin-bottom: 50px;
         }
 
         body {
@@ -29,6 +30,16 @@
 
         [template] {
             display: none !important;
+        }
+        
+        .string { color: green; }
+        .number { color: darkorange; }
+        .boolean { color: blue; }
+        .null { color: magenta; }
+        .key { color: red; }
+
+        #response {
+            height: fit-content;
         }
     </style>
 </head>
@@ -52,9 +63,9 @@
                 Add Data Field
             </div>
             <div id="resetDataFields" class="ui inverted red button">Reset Data Fields</div>
-            <div class="ui massive inverted dividing header">Response</div>
+            <div class="ui massive inverted dividing header"><span id="responseHeader" class="ui text">Response</span></div>
             
-            <div class="ui inverted segment" id="response"></div>
+            <div class="ui inverted segment" id="response"><pre></pre></div>
         </div>
     </div>
 

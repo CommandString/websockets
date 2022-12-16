@@ -62,9 +62,7 @@ $("#addField").click(() => {
 
     fields.removeAttr("template")
     fields.appendTo("#data-fields")
-})
-
-$("#addField").click()
+});
 
 $("#sendRequest").click(() => {
     ws.newRequest($(`[name='endpoint']`).val())
@@ -79,10 +77,34 @@ $("#sendRequest").click(() => {
         }
 
         if (i == $("#data-fields .field input").length - 1) {
+            function syntaxHighlight(json) {
+                if (typeof json != 'string') {
+                     json = JSON.stringify(json, undefined, 2);
+                }
+                json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+                    var cls = 'number';
+                    if (/^"/.test(match)) {
+                        if (/:$/.test(match)) {
+                            cls = 'key';
+                        } else {
+                            cls = 'string';
+                        }
+                    } else if (/true|false/.test(match)) {
+                        cls = 'boolean';
+                    } else if (/null/.test(match)) {
+                        cls = 'null';
+                    }
+                    return '<span class="' + cls + '">' + match + '</span>';
+                });
+            }
+
             ws.send(res => {
-                console.log(res)
+                $("#response pre").html(syntaxHighlight(res))
+                $("#responseHeader").removeClass("red").addClass("green").text("Response Successful")
             }, res => {
-                console.error(res)
+                $("#response pre").html(syntaxHighlight(res))
+                $("#responseHeader").removeClass("green").addClass("red").text("Response Failed")
             })
         }
     })

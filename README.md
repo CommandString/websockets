@@ -9,7 +9,7 @@ A boilerplate for PHP websockets that connect to javascript
 
 `composer install`
 
-# Using the example #
+# Looking at the example #
 
 `php index.php`
 
@@ -17,7 +17,7 @@ A boilerplate for PHP websockets that connect to javascript
 
 run `php -S localhost:8000 -t ./` in the example directory
 
-# Created Endpoints
+# Creating Endpoints
 
 Add a static method to the Requests class in `./Requests.php`, name the method after the name of the endpoint
 

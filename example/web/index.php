@@ -47,7 +47,7 @@
     <div class="ui inverted violet loading segment">
         <div class="ui massive inverted dividing header">Websocket Example Page</div>
         <div class="ui inverted form">
-            <div class="eight wide field">
+            <div class="sixteen wide field">
                 <label>Endpoint</label>
                 <input type="text" name="endpoint">
             </div>
@@ -56,13 +56,9 @@
             <div id="data-fields"></div>
 
             <div class="ui divider"></div>
-            <div id="sendRequest" class="ui inverted green button">
-                Send Request
-            </div>
-            <div id="addField" class="ui inverted yellow button">
-                Add Data Field
-            </div>
-            <div id="resetDataFields" class="ui inverted red button">Reset Data Fields</div>
+            <div id="sendRequest" class="ui inverted green button">Send Request</div>
+            <div id="addField" class="ui inverted yellow button">Add Data Field</div>
+            <div id="resetFields" class="ui inverted red button">Reset Data Fields</div>
             <div class="ui massive inverted dividing header"><span id="responseHeader" class="ui text">Response</span></div>
             
             <div class="ui inverted segment" id="response"><pre></pre></div>
@@ -71,11 +67,11 @@
 
     <!-- DATA FIELD TEMPLATE --> 
     <div template="data-fields" class="fields">
-        <div class="four wide field">
+        <div class="eight wide field">
             <label>Key</label>
             <input type="text" name="key">
         </div>
-        <div class="four wide field">
+        <div class="eight wide field">
             <label>Value</label>
             <input type="text" name="value">
         </div>

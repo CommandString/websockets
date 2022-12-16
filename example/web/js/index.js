@@ -64,6 +64,10 @@ $("#addField").click(() => {
     fields.appendTo("#data-fields")
 });
 
+$("#resetFields").click(() => {
+    $("#data-fields > .fields").remove()
+});
+
 $("#sendRequest").click(() => {
     ws.newRequest($(`[name='endpoint']`).val())
 
@@ -77,7 +81,7 @@ $("#sendRequest").click(() => {
         }
 
         if (i == $("#data-fields .field input").length - 1) {
-            function syntaxHighlight(json) {
+            function syntaxHighlight(json) { // thanks StackedOverflow for this one XD
                 if (typeof json != 'string') {
                      json = JSON.stringify(json, undefined, 2);
                 }

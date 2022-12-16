@@ -8,7 +8,6 @@ $.toast({
 })
 
 let ws = null
-let attempts = 1
 let connected = false
 
 function connect() {
@@ -22,7 +21,6 @@ function connect() {
 
         $("body > .segment").removeClass("loading")
 
-        attempts = 1
         connected = true
     }
 
@@ -35,14 +33,7 @@ function connect() {
     }
 
     ws.websocket.onclose = (event) => {
-        attempts++
-        let delayIncrement = 500
-        let maxDelay = 5000
-        let delay = attempts * delayIncrement
-
-        if (delay > maxDelay) {
-            delay = maxDelay
-        }
+        let delay = 2000
 
         let title = (connected) ? "Websocket Connection Closed" : "Failed To Connect To Websocket"
 

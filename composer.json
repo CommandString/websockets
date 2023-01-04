@@ -5,10 +5,13 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "CommandString\\WebSockets\\": "src/"
+            "CommandString\\WebSockets\\": "src/",
+            "Routes\\": "routes/"
         }
     },
     "require": {
-        "cboden/ratchet": "^0.4.4"
+        "cboden/ratchet": "^0.4.4",
+        "react/react": "^1.3",
+        "commandstring/router": "^2.0"
     }
 }

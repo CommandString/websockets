@@ -6,14 +6,14 @@ use CommandString\WebSockets\Connection\Client;
 use CommandString\WebSockets\Connection\Clients;
 use Exception;
 use Ratchet\ConnectionInterface;
-use Ratchet\RFC6455\Messaging\MessageInterface;
 use Ratchet\WebSocket\MessageComponentInterface;
 
 class WebSocket implements MessageComponentInterface {
     private Clients $clients;
 
-    public function __construct(private Requests $requests)
+    public function __construct(protected \React\EventLoop\LoopInterface $loop, private Requests $requests)
     {
+        $this->loop = $loop;
         $this->clients = new Clients;
     }
     

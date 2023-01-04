@@ -7,13 +7,7 @@ A boilerplate for PHP websockets that connect to javascript
 
 `composer install`
 
-# Looking at the example #
-
-`php index.php`
-
-*open another terminal*
-
-run `php -S localhost:8000 -t ./` in the example directory
+then run `php index.php`
 
 # Creating Endpoints
 

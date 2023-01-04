@@ -1,8 +1,4 @@
 {
-    "name": "commandstring/websocket",
-    "description": "JS to PHP websocket helper",
-    "type": "library",
-    "license": "MIT",
     "autoload": {
         "psr-4": {
             "CommandString\\WebSockets\\": "src/",

@@ -1,0 +1,30 @@
+body > .segment {
+    height: 103%;
+    width: 100%;
+    border-radius: unset !important;
+    background: #000000 !important;
+    overflow: scroll;
+}
+
+#response {
+    height: 20vh;
+    margin-bottom: 50px;
+}
+
+body {
+    overflow: hidden;
+}
+
+[template] {
+    display: none !important;
+}
+
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
+
+#response {
+    height: fit-content;
+}

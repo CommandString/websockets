@@ -1,0 +1,15 @@
+{
+    "require": {
+        "commandstring/router": "^2.1",
+        "commandstring/env": "^1.0",
+        "commandstring/cookie-encryption": "^2.0",
+        "commandstring/pdo": "^2.0",
+        "cboden/ratchet": "^0.4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Routes\\": "./routes",
+            "WebSocket\\": "./websocket"
+        }
+    }
+}
